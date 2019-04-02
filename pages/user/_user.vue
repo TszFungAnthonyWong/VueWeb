@@ -24,7 +24,7 @@ created(){
 },
 
 validate ({ params }) {
-    return /^\w*-\w*-\d+$/.test(params.user)
+    return /^[A-Z,a-z]+-[A-Z,a-z]+-\d+$/.test(params.user)
   },
 
 
