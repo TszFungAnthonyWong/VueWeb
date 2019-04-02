@@ -1,7 +1,7 @@
 <template>
 <div>
     <h1>{{firstName+"  "+lastName}}</h1>
-    <p>Content: {{id}}</p>
+    <p>user id: {{id}}</p>
 </div>
 </template>
 
@@ -23,9 +23,14 @@ created(){
     this.id = user[2];
 },
 
+validate ({ params }) {
+    return /^\w*-\w*-\d+$/.test(params.user)
+  },
+
+
 head() {    
     return{
-        title: this.firstName,
+        title: this.firstName + " " + this.lastName,
         meta:[
            {name:this.firstName+this.lastName, content: this.id} 
         ]
